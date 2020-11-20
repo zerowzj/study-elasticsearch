@@ -1,0 +1,13 @@
+#
+logging:
+  config: classpath:logback.xml
+#
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+  application:
+    name: study-elasticsearch-springboot
+  #
+  data:
+    elasticsearch:
