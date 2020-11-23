@@ -10,4 +10,4 @@ spring:
     name: study-elasticsearch-springboot
   #
   data:
-    elasticsearch:
+    elasticsearch: 1111
