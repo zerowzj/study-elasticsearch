@@ -43,6 +43,6 @@
 
 # 二. 配置
 
-## 2.1 
+## 2.1 elasticsearch.yml
 
-## 2.2
+## 2.2 jvm.options
