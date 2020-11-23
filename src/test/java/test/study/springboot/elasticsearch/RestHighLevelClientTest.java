@@ -14,10 +14,6 @@ public class RestHighLevelClientTest {
 
     @Test
     public void test() {
-        RestClient lowLevelClient = highLevelClient.getLowLevelClient();
-        IndexRequest request = new IndexRequest("spring-data")
-                .source(singletonMap("feature", "high-level-rest-client"))
-                .setRefreshPolicy(IMMEDIATE);
-        IndexResponse response = highLevelClient.index(request);
+//        highLevelClient.
     }
 }
