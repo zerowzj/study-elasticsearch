@@ -37,16 +37,23 @@
 
 ## 1.3 启停
 
-1. 进入 bin/ 目录，执行 elasticsearch
-2. 
-5. 
+1. 进入 bin/ 目录
+
+2. 执行 ./elasticsearch 或者 ./elasticsearch -d
+
+   
 
 ## 1.4 问题
 
 1. 
 
+
+
 # 二. 配置
 
 ## 2.1 elasticsearch.yml
 
+
+
 ## 2.2 jvm.options
+
