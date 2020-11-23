@@ -1,4 +1,4 @@
-package study.elasticsearch.springboot.support.elasticsearch;
+package study.elasticsearch.springboot.dao;
 
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -13,7 +13,7 @@ import java.time.Duration;
 
 @Slf4j
 @Configuration
-//
+
 @EnableElasticsearchRepositories
 public class ElasticSearchCfg extends AbstractElasticsearchConfiguration {
 
@@ -24,6 +24,10 @@ public class ElasticSearchCfg extends AbstractElasticsearchConfiguration {
                 .connectedTo("localhost:9200")
                 .withConnectTimeout(Duration.ofSeconds(5))
                 .withSocketTimeout(Duration.ofSeconds(3))
+                //.useSsl()
+                //.withDefaultHeaders(defaultHeaders)
+                //.withBasicAuth(username, password)
+                // ... other options
                 .build();
         RestHighLevelClient client = RestClients.create(configuration).rest();
 
