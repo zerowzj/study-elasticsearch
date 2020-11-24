@@ -15,7 +15,7 @@ import java.time.Duration;
 @Configuration
 //
 @EnableElasticsearchRepositories
-public class ElasticsearchCfg extends AbstractElasticsearchConfiguration {
+public class ElasticSearchCfg extends AbstractElasticsearchConfiguration {
 
     @Bean
     @Override
