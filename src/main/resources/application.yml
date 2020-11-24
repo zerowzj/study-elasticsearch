@@ -12,3 +12,4 @@ spring:
   elasticsearch:
     rest:
       uris: 111.229.94.31:9200
+      connection-timeout: 50
