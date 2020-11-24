@@ -34,7 +34,7 @@ path.data: /path/to/data
 #
 # Path to log files:
 #
-#path.logs: /path/to/logs
+path.logs: /path/to/logs
 #
 # ----------------------------------- Memory -----------------------------------
 #

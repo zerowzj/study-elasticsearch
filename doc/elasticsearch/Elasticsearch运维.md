@@ -70,9 +70,9 @@ network.host: 0.0.0.0
 http.port: 9200
 
 #发现
-discovery.seed_hosts: ["host1", "host2"]
+discovery.seed_hosts: ["host1"]
 #
-cluster.initial_master_nodes: ["node-1", "node-2"]
+cluster.initial_master_nodes: ["node-1"]
 
 ```
 

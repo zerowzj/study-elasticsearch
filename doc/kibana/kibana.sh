@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ES_HOME=
+KIBANA_HOME=/usr/server/kibana7.2
