@@ -10,6 +10,8 @@ import study.elasticsearch.springboot.repository.user.UserEntity;
 import study.elasticsearch.springboot.repository.user.UserRepository;
 import study.elasticsearch.springboot.support.SpringBootCfg;
 
+import java.util.Optional;
+
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
@@ -19,9 +21,22 @@ public class ElasticsearchRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    public void test() {
+    public void save_test() {
         UserEntity userEntity = new UserEntity();
-        userEntity.setUbId(10001L);
-        userRepository.save(userEntity);
+        userEntity.setUbId(10003L);
+        userEntity.setUbLoginName("wzhj");
+        userEntity.setUbLoginPwd("123");
+        userEntity = userRepository.save(userEntity);
+        log.info(">>>>>> {}", userEntity);
+    }
+
+    @Test
+    public void findById_test() {
+        Optional<UserEntity> optional = userRepository.findById(10001L);
+        log.info("{}", optional.get());
+    }
+
+    @Test
+    public void f_test() {
     }
 }
