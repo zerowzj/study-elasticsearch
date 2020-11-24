@@ -16,7 +16,7 @@ KIBANA_HOME=/usr/server/kibana7.2
 EXEC=$KIBANA_HOME/bin/kibana
 PID_FILE=$KIBANA_HOME/kibana.pid
 
-case "$1" in
+case $1 in
 start)
   if [ -f $PID_FILE ]; then
     echo "$PIDFILE exists, process is already running or crashed"
