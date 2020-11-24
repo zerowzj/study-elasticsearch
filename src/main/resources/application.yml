@@ -9,9 +9,9 @@ spring:
   application:
     name: study-elasticsearch-springboot
   #
-  data:
-    elasticsearch:
-      cluster-name: my-application
-      cluster-nodes: node-1, node-2
-#
-elasticsearch:
+#  data:
+#    elasticsearch:
+#      cluster-name: my-application
+#      cluster-nodes: node-1, node-2
+##
+#elasticsearch:
