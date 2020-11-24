@@ -12,6 +12,7 @@
 ### END INIT INFO
 
 KIBANA_HOME=/usr/server/kibana7.2
+
 EXEC=$KIBANA_HOME/bin/kibana
 PID_FILE=$KIBANA_HOME/kibana.pid
 
