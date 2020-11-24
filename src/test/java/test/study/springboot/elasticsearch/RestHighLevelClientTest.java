@@ -1,5 +1,6 @@
 package test.study.springboot.elasticsearch;
 
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ public class RestHighLevelClientTest {
 
     @Test
     public void test() {
-
+        IndexRequest request = new IndexRequest();
+//        highLevelClient.index(request);
     }
 }
