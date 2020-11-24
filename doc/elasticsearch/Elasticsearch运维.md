@@ -53,6 +53,29 @@
 
 ## 2.1 elasticsearch.yml
 
+```shell
+#集群名称
+cluster.name: my-application
+#节点名称
+node.name: node-1
+
+#数据存储目录（多个路径）
+path.data: /path/to/data
+#日志目录
+path.logs: /path/to/logs
+
+#本机的IP地址
+network.host: 0.0.0.0
+#监听端口(默认)
+http.port: 9200
+
+#发现
+discovery.seed_hosts: ["host1", "host2"]
+#
+cluster.initial_master_nodes: ["node-1", "node-2"]
+
+```
+
 
 
 ## 2.2 jvm.options
