@@ -1,4 +1,4 @@
-package study.elasticsearch.springboot.dao.user;
+package study.elasticsearch.springboot.repository.user;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 

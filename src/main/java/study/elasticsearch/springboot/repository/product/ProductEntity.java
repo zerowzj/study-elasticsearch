@@ -1,4 +1,4 @@
-package study.elasticsearch.springboot.dao.product;
+package study.elasticsearch.springboot.repository.product;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

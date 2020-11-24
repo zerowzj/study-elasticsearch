@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-import study.elasticsearch.springboot.dao.user.UserEntity;
-import study.elasticsearch.springboot.dao.user.UserRepository;
+import study.elasticsearch.springboot.repository.user.UserEntity;
+import study.elasticsearch.springboot.repository.user.UserRepository;
 import study.elasticsearch.springboot.support.SpringBootCfg;
 
 @Slf4j
