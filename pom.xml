@@ -21,7 +21,7 @@
 
     <dependencies>
         <!-- ============================== -->
-        <!-- （★）Elasticsearch                  -->
+        <!-- （★）Elasticsearch            -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
