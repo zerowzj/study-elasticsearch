@@ -37,6 +37,13 @@ public class ElasticsearchRepositoryTest {
     }
 
     @Test
-    public void f_test() {
+    public void existsById_test() {
+        boolean isExists = userRepository.existsById(100012L);
+        log.info(">>>>>> {}", isExists);
+    }
+
+    @Test
+    public void deleteById_test() {
+        userRepository.deleteById(10001L);
     }
 }

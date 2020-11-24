@@ -12,8 +12,10 @@ public class UserEntity {
 
     @Id
     private Long ubId;
+
     @Field(type = FieldType.Text)
     private String ubLoginName;
+
     @Field(type = FieldType.Text)
     private String ubLoginPwd;
 }

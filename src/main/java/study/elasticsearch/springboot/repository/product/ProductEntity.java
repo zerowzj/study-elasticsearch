@@ -11,9 +11,8 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class ProductEntity {
 
     @Id
-    private Long ubId;
-    @Field(type = FieldType.Text, analyzer = "ik_max_word")
-    private String ubLoginName;
+    private Long pbId;
+
     @Field(type = FieldType.Text)
-    private String ubLoginPwd;
+    private String pbName;
 }
