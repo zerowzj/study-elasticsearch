@@ -1,9 +1,10 @@
 #!/bin/bash
 #
 ES_HOME=/usr/server/es7.2
+tt=org.elasticsearch.bootstrap.Elasticsearch
 #
 get_pid() {
-  pid=$(ps -ef | grep $ES_HOME | grep -v grep | awk '{print $2}')
+  pid=$(ps -ef | grep $tt | grep -v grep | awk '{print $2}')
   echo "$pid"
 }
 #
@@ -11,9 +12,10 @@ status() {
   pid=$(get_pid)
   if [ -z "$pid" ]; then
     echo "No ES Server running"
-    exit 0
+  else
+    echo "ES Server running on $pid"
   fi
-  echo "ES Server running on $pid"
+  exit 0
 }
 #
 start() {
