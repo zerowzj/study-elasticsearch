@@ -48,8 +48,8 @@ stop() {
     echo "STOPPED PID: $pid"
   else
     echo "ERROR: Stop failure![code: $?]"
-    exit 0
   fi
+  exit 0
 }
 #
 case $1 in
