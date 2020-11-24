@@ -80,3 +80,26 @@ cluster.initial_master_nodes: ["node-1"]
 
 ## 2.2 jvm.options
 
+
+
+
+
+
+
+# . 可视化
+
+## 1.1 ElasticHD
+
+```shell
+#解压
+unzip elasticHD_linux_amd64.zip
+
+#授权
+chmod 0777 ElasticHD、
+
+#启动
+exec ./ElasticHD -p 127.0.0.1:9800
+```
+
+
+
