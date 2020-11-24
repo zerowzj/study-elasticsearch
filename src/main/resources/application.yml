@@ -9,9 +9,6 @@ spring:
   application:
     name: study-elasticsearch-springboot
   #
-#  data:
-#    elasticsearch:
-#      cluster-name: my-application
-#      cluster-nodes: node-1, node-2
-##
-#elasticsearch:
+  elasticsearch:
+    rest:
+      uris: 111.229.94.31:9200

@@ -16,6 +16,7 @@
     <properties>
         <project.build.ourceEncoding>UTF-8</project.build.ourceEncoding>
         <java>1.8</java>
+        <elasticsearch.version>7.2.0</elasticsearch.version>
     </properties>
 
     <dependencies>
@@ -24,9 +25,9 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
-        <!-- ==================== -->
-        <!-- elasticsearch        -->
-        <!-- ==================== -->
+        <!-- ============================== -->
+        <!-- Elasticsearch                  -->
+        <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
