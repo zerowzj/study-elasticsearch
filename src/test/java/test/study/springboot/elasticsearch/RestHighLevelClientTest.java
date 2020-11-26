@@ -26,7 +26,6 @@ import study.elasticsearch.springboot.support.SpringBootCfg;
 
 import java.util.Map;
 
-
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
