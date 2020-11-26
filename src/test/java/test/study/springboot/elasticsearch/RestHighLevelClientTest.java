@@ -36,6 +36,7 @@ public class RestHighLevelClientTest {
     @Autowired
     private RestHighLevelClient client;
 
+    //（★）索引
     @Test
     public void createIndex_test() throws Exception {
         CreateIndexRequest request = new CreateIndexRequest(index);
@@ -60,6 +61,7 @@ public class RestHighLevelClientTest {
         log.info("{}", response.isAcknowledged());
     }
 
+    //（★）文档
     @Test
     public void insertDoc_test() throws Exception {
         String id = "2";
