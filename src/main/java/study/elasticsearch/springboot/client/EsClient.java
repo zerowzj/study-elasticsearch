@@ -1,8 +1,12 @@
 package study.elasticsearch.springboot.client;
 
+import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.update.UpdateRequest;
+import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
+import org.elasticsearch.client.indices.CreateIndexResponse;
 
 public class EsClient {
 
@@ -12,19 +16,48 @@ public class EsClient {
         this.client = client;
     }
 
-    public void createIndex(String index) {
-        CreateIndexRequest request = new CreateIndexRequest(index);
+    /**
+     * （★）索引
+     */
+    //创建索引
+    public void createIndex(String index, RequestOptions options) {
         try {
-            client.indices().create(request, null);
+            CreateIndexRequest request = new CreateIndexRequest(index);
+            CreateIndexResponse response = client.indices()
+                    .create(request, options);
         } catch (Exception ex) {
             throw new RuntimeException("", ex);
         }
     }
 
-    public void insertDoc(String index) {
-        IndexRequest request = new IndexRequest(index);
+    /**
+     * （★）文档
+     */
+    //插入文档
+    public void insertDoc(String index, RequestOptions options) {
         try {
-            client.index(request, null);
+            IndexRequest request = new IndexRequest(index);
+            client.index(request, options);
+        } catch (Exception ex) {
+            throw new RuntimeException("", ex);
+        }
+    }
+
+    //更新文档
+    public void updateDoc(String index, RequestOptions options) {
+        try {
+//            UpdateRequest request = new UpdateRequest(index);
+//            client.update(request, options);
+        } catch (Exception ex) {
+            throw new RuntimeException("", ex);
+        }
+    }
+
+    //删除文档
+    public void deleteDoc(String index, RequestOptions options) {
+        try {
+            DeleteRequest request = new DeleteRequest(index);
+            client.delete(request, options);
         } catch (Exception ex) {
             throw new RuntimeException("", ex);
         }
