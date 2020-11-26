@@ -8,6 +8,6 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @Configuration
 //
 @EnableElasticsearchRepositories(basePackages = "study.elasticsearch.springboot.repository")
-public class ElasticSearchCfg {
+public class ElasticsearchCfg {
 
 }
