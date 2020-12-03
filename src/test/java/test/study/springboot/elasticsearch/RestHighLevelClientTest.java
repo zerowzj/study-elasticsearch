@@ -109,4 +109,12 @@ public class RestHighLevelClientTest {
         DeleteResponse response = client.delete(request, RequestOptions.DEFAULT);
         log.info("{}", response.status());
     }
+
+    @Test
+    public void searchDoc_test() throws Exception {
+        String id = "";
+        DeleteRequest request = new DeleteRequest(index, id);
+        DeleteResponse response = client.delete(request, RequestOptions.DEFAULT);
+        log.info("{}", response.status());
+    }
 }

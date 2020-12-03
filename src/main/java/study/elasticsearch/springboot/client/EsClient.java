@@ -5,6 +5,8 @@ import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
@@ -63,6 +65,17 @@ public class EsClient {
         }
     }
 
+    //删除文档
+    public void deleteDoc(String index, String id, RequestOptions options) {
+        try {
+            DeleteRequest request = new DeleteRequest(index, id);
+            DeleteResponse response = client.delete(request, options);
+            RestStatus status = response.status();
+        } catch (Exception ex) {
+            throw new RuntimeException("delete doc error!", ex);
+        }
+    }
+
     //更新文档
     public void updateDoc(String index, String id, RequestOptions options) {
         try {
@@ -73,14 +86,14 @@ public class EsClient {
         }
     }
 
+
     //删除文档
-    public void deleteDoc(String index, String id, RequestOptions options) {
+    public void searchDoc(String index, String id, RequestOptions options) {
         try {
-            DeleteRequest request = new DeleteRequest(index, id);
-            DeleteResponse response = client.delete(request, options);
-            RestStatus status = response.status();
+            SearchRequest request = new SearchRequest();
+            SearchResponse response = client.search(request, options);
         } catch (Exception ex) {
-            throw new RuntimeException("delete doc error!", ex);
+            throw new RuntimeException("search doc error!", ex);
         }
     }
 }

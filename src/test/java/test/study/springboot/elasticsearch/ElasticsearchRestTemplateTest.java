@@ -21,6 +21,5 @@ public class ElasticsearchRestTemplateTest {
     @Test
     public void test() {
 
-//        restTemplate.
     }
 }
