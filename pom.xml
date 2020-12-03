@@ -20,7 +20,7 @@
     </properties>
     <dependencies>
         <!-- ============================== -->
-        <!-- （★）Elasticsearch            -->
+        <!-- （★）Elasticsearch starter     -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,7 +47,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
