@@ -1,9 +1,11 @@
 # Kibana is served by a back end server. This setting specifies the port to use.
+#（★）端口
 server.port: 5601
 
 # Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.
 # The default is 'localhost', which usually means remote machines will not be able to connect.
 # To allow connections from remote users, set this parameter to a non-loopback address.
+#（★）端口
 server.host: "0.0.0.0"
 
 # Enables you to specify a path to mount Kibana at if you are running behind a proxy.
@@ -25,6 +27,7 @@ server.host: "0.0.0.0"
 #server.name: "your-hostname"
 
 # The URLs of the Elasticsearch instances to use for all your queries.
+#（★）ES主机
 elasticsearch.hosts: ["http://111.229.94.31:9200"]
 
 # Kibana uses an index in Elasticsearch to store saved searches, visualizations and
@@ -104,4 +107,5 @@ elasticsearch.hosts: ["http://111.229.94.31:9200"]
 
 # Specifies locale to be used for all localizable strings, dates and number formats.
 # Supported languages are the following: English - entity , by default , Chinese - zh-CN .
-#i18n.locale: "entity"
+#（★）汉化
+i18n.locale: "entity"
