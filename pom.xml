@@ -20,7 +20,7 @@
     </properties>
     <dependencies>
         <!-- ============================== -->
-        <!-- （★）Elasticsearch starter     -->
+        <!-- （★）Elasticsearch Starter     -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
