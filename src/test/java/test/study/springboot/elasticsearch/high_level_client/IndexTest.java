@@ -30,6 +30,7 @@ public class IndexTest {
         CreateIndexRequest request = new CreateIndexRequest(index);
         CreateIndexResponse response = client.indices()
                 .create(request, RequestOptions.DEFAULT);
+        response.isShardsAcknowledged();
         log.info("{}", response.isAcknowledged());
     }
 

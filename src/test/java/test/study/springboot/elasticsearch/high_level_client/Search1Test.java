@@ -72,7 +72,8 @@ public class Search1Test {
     public void range_test() throws Exception {
         //
         RangeQueryBuilder rangeQuery = QueryBuilders.rangeQuery("age")
-                .gt(100).lt(200);
+                .gt(100)
+                .lt(200);
         //
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.query(rangeQuery);
