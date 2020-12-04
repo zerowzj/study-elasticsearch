@@ -9,6 +9,8 @@ import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
@@ -113,8 +115,8 @@ public class RestHighLevelClientTest {
     @Test
     public void searchDoc_test() throws Exception {
         String id = "";
-        DeleteRequest request = new DeleteRequest(index, id);
-        DeleteResponse response = client.delete(request, RequestOptions.DEFAULT);
+        SearchRequest request = new SearchRequest(index, id);
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
         log.info("{}", response.status());
     }
 }

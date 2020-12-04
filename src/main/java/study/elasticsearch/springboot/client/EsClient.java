@@ -86,7 +86,6 @@ public class EsClient {
         }
     }
 
-
     //删除文档
     public void searchDoc(String index, String id, RequestOptions options) {
         try {

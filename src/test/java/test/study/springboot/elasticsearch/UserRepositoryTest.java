@@ -15,7 +15,7 @@ import java.util.Optional;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
-public class ElasticsearchRepositoryTest {
+public class UserRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;
