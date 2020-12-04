@@ -5,11 +5,11 @@ import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.index.query.MatchPhrasePrefixQueryBuilder;
+import org.elasticsearch.index.query.MatchPhraseQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,19 +21,16 @@ import java.util.Arrays;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
-public class RangeQueryTest {
+public class MatchPhasePrefixQueryTest {
 
     private String index = "user";
 
     @Autowired
     private RestHighLevelClient client;
 
-    @Test
-    public void range_test() throws Exception {
+    public void match_phase_test() throws Exception {
         //
-        RangeQueryBuilder query = QueryBuilders.rangeQuery("age")
-                .gt(100).lt(200);
-
+        MatchPhrasePrefixQueryBuilder query = QueryBuilders.matchPhrasePrefixQuery("name", "wzjzero");
         //
         SearchSourceBuilder source = new SearchSourceBuilder();
         source.query(query);
@@ -46,4 +43,5 @@ public class RangeQueryTest {
             log.info("{}", e.getSourceAsString());
         });
     }
+
 }

@@ -6,7 +6,8 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.RangeQueryBuilder;
+import org.elasticsearch.index.query.SimpleQueryStringBuilder;
+import org.elasticsearch.index.query.TermsQueryBuilder;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.Test;
@@ -21,19 +22,18 @@ import java.util.Arrays;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
-public class RangeQueryTest {
+public class SimpleQueryStringQueryTest {
 
     private String index = "user";
 
     @Autowired
     private RestHighLevelClient client;
 
-    @Test
-    public void range_test() throws Exception {
-        //
-        RangeQueryBuilder query = QueryBuilders.rangeQuery("age")
-                .gt(100).lt(200);
 
+    @Test
+    public void term_test() throws Exception {
+        //
+        SimpleQueryStringBuilder query = QueryBuilders.simpleQueryStringQuery("");
         //
         SearchSourceBuilder source = new SearchSourceBuilder();
         source.query(query);
@@ -43,7 +43,24 @@ public class RangeQueryTest {
         SearchResponse response = client.search(request, RequestOptions.DEFAULT);
         SearchHits hits = response.getHits();
         Arrays.stream(hits.getHits()).forEach(e -> {
-            log.info("{}", e.getSourceAsString());
+            log.info(">>>>>> {}", e.getSourceAsString());
+        });
+    }
+
+    @Test
+    public void terms_test() throws Exception {
+        //
+        TermsQueryBuilder termsQuery = QueryBuilders.termsQuery("name", "wzj", "zero");
+        //
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(termsQuery);
+
+        SearchRequest request = new SearchRequest(index);
+        request.source(sourceBuilder);
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        SearchHits hits = response.getHits();
+        Arrays.stream(hits.getHits()).forEach(e -> {
+            log.info(">>>>>> {}", e.getSourceAsString());
         });
     }
 }
