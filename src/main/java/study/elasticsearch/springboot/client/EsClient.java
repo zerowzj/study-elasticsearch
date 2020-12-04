@@ -1,5 +1,6 @@
 package study.elasticsearch.springboot.client;
 
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.delete.DeleteResponse;
@@ -15,7 +16,9 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.rest.RestStatus;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
 
+@Slf4j
 public class EsClient {
 
     private RestHighLevelClient client;
@@ -48,7 +51,7 @@ public class EsClient {
                     .delete(request, options);
             response.isAcknowledged();
         } catch (Exception ex) {
-            throw new RuntimeException("create index error!", ex);
+            throw new RuntimeException("delete index error!", ex);
         }
     }
 
@@ -86,13 +89,14 @@ public class EsClient {
         }
     }
 
-    //删除文档
-    public void searchDoc(String index, String id, RequestOptions options) {
+    //查询文档
+    public SearchResponse searchDoc(SearchRequest request, SearchSourceBuilder builder) {
+        SearchResponse response;
         try {
-            SearchRequest request = new SearchRequest();
-            SearchResponse response = client.search(request, options);
+            response = client.search(request, RequestOptions.DEFAULT);
         } catch (Exception ex) {
             throw new RuntimeException("search doc error!", ex);
         }
+        return response;
     }
 }

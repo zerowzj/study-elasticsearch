@@ -5,9 +5,7 @@ import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.index.query.TermQueryBuilder;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -37,13 +35,12 @@ public class TermQueryTest {
     @Test
     public void term_test() throws Exception {
         //
-        TermQueryBuilder termQuery = QueryBuilders.termQuery("name", "wzhj");
+        TermQueryBuilder termQuery = QueryBuilders.termQuery("name", "zero wzj");
         //
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.query(termQuery);
 
         SearchRequest request = new SearchRequest(index);
-        request.source(sourceBuilder);
         SearchResponse response = client.search(request, RequestOptions.DEFAULT);
         SearchHits hits = response.getHits();
         Arrays.stream(hits.getHits()).forEach(e -> {

@@ -39,12 +39,12 @@ public class DocTest {
 
     @Test
     public void insertDoc_test() throws Exception {
-        String id = "3";
+        String id = "2";
         //
         IndexRequest request = new IndexRequest(index);
         request.id(id);
         Map<String, Object> data = Maps.newHashMap();
-        data.put("name", "wzhj");
+        data.put("name", "wzj");
         data.put("age", 210);
         request.source(data);
         //
