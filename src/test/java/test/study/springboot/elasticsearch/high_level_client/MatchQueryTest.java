@@ -5,7 +5,9 @@ import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.index.query.MatchPhraseQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -31,7 +33,7 @@ public class MatchQueryTest {
     @Test
     public void match_test() throws Exception {
         //
-        MatchQueryBuilder matchQuery = QueryBuilders.matchQuery("name", "wzj zero 111");
+        MatchQueryBuilder matchQuery = QueryBuilders.matchQuery("name", "wzjzero");
         //
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.query(matchQuery);
@@ -44,4 +46,38 @@ public class MatchQueryTest {
             log.info("{}", e.getSourceAsString());
         });
     }
+
+    @Test
+    public void multi_match_test() throws Exception {
+        //
+        MultiMatchQueryBuilder matchQuery = QueryBuilders.multiMatchQuery("name", "wzjzero");
+        //
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(matchQuery);
+
+        SearchRequest request = new SearchRequest(index);
+        request.source(sourceBuilder);
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        SearchHits hits = response.getHits();
+        Arrays.stream(hits.getHits()).forEach(e -> {
+            log.info("{}", e.getSourceAsString());
+        });
+    }
+
+    public void match_phase_test() throws Exception {
+        //
+        MatchPhraseQueryBuilder matchQuery = QueryBuilders.matchPhraseQuery("name", "wzjzero");
+        //
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(matchQuery);
+
+        SearchRequest request = new SearchRequest(index);
+        request.source(sourceBuilder);
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        SearchHits hits = response.getHits();
+        Arrays.stream(hits.getHits()).forEach(e -> {
+            log.info("{}", e.getSourceAsString());
+        });
+    }
+
 }
