@@ -23,7 +23,7 @@ import java.util.Arrays;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootCfg.class})
-public class Search1Test {
+public class MatchQueryTest {
 
     private String index = "user";
 
