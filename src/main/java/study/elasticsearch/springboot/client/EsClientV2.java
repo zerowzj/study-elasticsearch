@@ -18,7 +18,7 @@ public class EsClientV2 {
     //创建索引
     public void createIndex(String index, RequestOptions options) {
         try {
-//            template.c
+//            rest_template.c
         } catch (Exception ex) {
             throw new RuntimeException("create index error!", ex);
         }
@@ -66,7 +66,7 @@ public class EsClientV2 {
     //删除文档
     public void searchDoc(String index, String id, RequestOptions options) {
         try {
-//            template.search()
+//            rest_template.search()
         } catch (Exception ex) {
             throw new RuntimeException("search doc error!", ex);
         }
