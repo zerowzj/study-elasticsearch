@@ -1,4 +1,4 @@
-package test.study.springboot.elasticsearch;
+package test.study.springboot.elasticsearch.template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

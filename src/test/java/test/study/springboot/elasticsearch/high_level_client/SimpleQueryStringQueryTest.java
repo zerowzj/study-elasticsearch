@@ -29,7 +29,6 @@ public class SimpleQueryStringQueryTest {
     @Autowired
     private RestHighLevelClient client;
 
-
     @Test
     public void term_test() throws Exception {
         //
